@@ -27,7 +27,8 @@ export const LoginPage = () => {
     dispatch(startLoginWithEmail({email, password}))
   }
 
-  const onGoogleSignIn = () => {
+  const onGoogleSignIn = ( event ) => {
+    event.preventDefault()
     dispatch(startGoogleSignInt())
   }
 

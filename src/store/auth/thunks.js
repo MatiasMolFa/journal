@@ -13,8 +13,12 @@ export const startGoogleSignInt = () => {
     return async( dispatch ) => {
         dispatch(checkingCredential())
         const result = await singInWithGoogle()
-        if ( !result.ok ) dispatch( logout())
-        dispatch(login(result))
+        console.log(result.ok);
+        if ( result.ok ){
+            dispatch(login(result))
+        } else {
+            dispatch( logout({}))
+        }
     }
 }
 
